@@ -6,8 +6,8 @@ public class BulletCollision : MonoBehaviour
 {
 	
 	public string enemy;
-	public Rigidbody player1prefab;
-	public Rigidbody player2prefab;
+	public Rigidbody playerGPrefab;
+	public Rigidbody playerRPrefab;
 	public GameObject floor;
     // Start is called before the first frame update
     void Start()
@@ -32,13 +32,13 @@ public class BulletCollision : MonoBehaviour
 		if (other.gameObject.tag == enemy)
 		{
 			Destroy(other.gameObject);
-			if (enemy == "Player1")
+			if (enemy == "PlayerG")
 			{
-				Instantiate(player1prefab, new Vector3(-8.72f, 2.24f, -6.17f), new Quaternion(0, 0, 0, 0));
+				Instantiate(playerGPrefab, new Vector3(-8.5f, 0.5f, -3.5f), new Quaternion(0, 0, 0, 0));
 			}
-			if (enemy == "Player2")
+			if (enemy == "PlayerR")
 			{
-				Instantiate(player2prefab, new Vector3(8.46f, 2.24f, 1.12f), new Quaternion(0, 180, 0, 0));
+				Instantiate(playerRPrefab, new Vector3(8.5f, 0.5f, 3.5f), new Quaternion(0, 180, 0, 0));
 			}
 			Destroy(gameObject);
 		}
