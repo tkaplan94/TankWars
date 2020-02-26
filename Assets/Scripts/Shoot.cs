@@ -9,6 +9,7 @@ public class Shoot : MonoBehaviour
 	public string key2;
 	private Rigidbody tank;
 	private double cooldown = 0;
+
     // Start is called before the first frame update
     void Start()
     {

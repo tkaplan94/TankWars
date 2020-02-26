@@ -111,6 +111,7 @@ GameObject:
   - component: {fileID: 3672842680850470554}
   - component: {fileID: 3672842680850470549}
   - component: {fileID: 3672842680850470555}
+  - component: {fileID: 3672842680974778340}
   m_Layer: 0
   m_Name: Player G
   m_TagString: PlayerG
@@ -220,7 +221,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35606877c238bc04e9f3e0f872222bf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: a
 --- !u!114 &3672842680850470548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,7 +233,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33840c99adb566348ba6493c6a7c1bfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: d
 --- !u!114 &3672842680850470554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,7 +245,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ff7a33956231d4bb62982ad2423b77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: s
 --- !u!114 &3672842680850470549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,7 +257,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7026de3b43b3e3646ba2f75c4feebf13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: w
 --- !u!114 &3672842680850470555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,3 +272,16 @@ MonoBehaviour:
   prefab: {fileID: 7835871656045683477, guid: 22e0fab3339939948a1a27b2cd7a1e65, type: 3}
   key: space
   key2: space
+--- !u!114 &3672842680974778340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3672842680850470541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d0a3e0a5235ed547997051bb7f1b1cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changeDirCooldown: 75
