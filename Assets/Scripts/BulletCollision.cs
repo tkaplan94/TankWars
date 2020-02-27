@@ -4,30 +4,21 @@ using UnityEngine;
 
 public class BulletCollision : MonoBehaviour
 {
-	public string enemy;
-	public Rigidbody playerGPrefab;
-	public Rigidbody playerRPrefab;
-	public GameObject floor;
-	
-	private void OnTriggerEnter(Collider other)
+    [SerializeField] private string enemy1;
+    [SerializeField] private string enemy2;
+
+    private void OnTriggerEnter(Collider other)
 	{
-		if (other.gameObject.tag == "Wall")
-		{	
-			Destroy(gameObject);
-		}
-		
-		if (other.gameObject.tag == enemy)
+        // if bullet collided with either enemy
+        if (other.gameObject.tag == enemy1 || other.gameObject.tag == enemy2)
 		{
 			Destroy(other.gameObject);
-			if (enemy == "PlayerG")
-			{
-				Instantiate(playerGPrefab, new Vector3(-8.5f, 0.5f, -3.5f), new Quaternion(0, 0, 0, 0));
-			}
-			if (enemy == "PlayerR")
-			{
-				Instantiate(playerRPrefab, new Vector3(8.5f, 0.5f, 3.5f), new Quaternion(0, 180, 0, 0));
-			}
-			Destroy(gameObject);
+			Destroy(this.gameObject);
 		}
-	}	
+        // otherwise, destroy bullet no matter what it hit
+        else if (other.gameObject)
+        {
+            Destroy(this.gameObject);
+        }
+    }	
 }

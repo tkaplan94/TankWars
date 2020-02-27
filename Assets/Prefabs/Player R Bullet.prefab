@@ -122,9 +122,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20b67b83c438e0e439ea0854d2607e1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: PlayerG
-  playerGPrefab: {fileID: 3672842680850470551, guid: 3c3903bd06b1c014c909473459211eba,
-    type: 3}
-  playerRPrefab: {fileID: 8017382320525179929, guid: 2cd9ef6ed86478f4c98b760b81d01549,
-    type: 3}
-  floor: {fileID: 4036542828638548717, guid: 5e1e2fe963c91174498a00235c2f80f1, type: 3}
+  StartingTank: {fileID: 0}
+  enemy1: PlayerG
+  enemy2: PlayerG
