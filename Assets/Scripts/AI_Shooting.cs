@@ -23,7 +23,14 @@ public class AI_Shooting : MonoBehaviour
     {
         if (targetsInRadius())
         {
-            CheckForTargetInPath();
+            if (targetsInPath())
+            {
+                shouldFire = true;
+            }
+            else
+            {
+                shouldFire = false;
+            }
         }
     }
 
@@ -65,12 +72,11 @@ public class AI_Shooting : MonoBehaviour
 
     // CheckForTargetInPath sets shouldFire according to
     //  whether or not target is in path
-    private void CheckForTargetInPath()
+    private bool targetsInPath()
     {
-        if (target == null)
+        if (!target)
         {
-            shouldFire = false;
-            return;
+            return false;
         }
  
         float myZ = this.transform.position.z;
@@ -81,68 +87,162 @@ public class AI_Shooting : MonoBehaviour
         // check for targets to the right
         if (targetX > myX)
         {
-            // check for targets in path give or take 2
-            if (targetZ <= myZ + 2 && targetZ >= myZ - 2)
+            // check for targets in horizontal path of fire
+            if (targetZ <= myZ + 1.5 && targetZ >= myZ - 1.5)
             {
-                shouldFire = true;
-                return;
+                // check if tank is facing right
+                if (GetComponent<Compass>().GetDirection() == Compass.Direction.right)
+                {
+                    return true;
+                }
             }
+            // check for targets in vertical path of fire below
+            else if (targetX < myX + 1.5 && targetZ < myZ)
+            {
+                // check if tank is facing down
+                if (GetComponent<Compass>().GetDirection() == Compass.Direction.down)
+                {
+                    return true;
+                }
+            }
+            // check for targets in vertical path of fire above
+            else if (targetX < myX + 1.5 && targetZ > myZ)
+            {
+                // check if tank is facing up
+                if (GetComponent<Compass>().GetDirection() == Compass.Direction.up)
+                {
+                    return true;
+                }
+            }
+            // otherwise, not in any path of fire
             else
             {
-                shouldFire = false;
-                return;
+                return false;
             }
         }
         // check for targets to the left
-        else if (targetX < myX)
-        {
-            // check for targets in path give or take 2
-            if (targetZ <= myZ + 2 && targetZ >= myZ - 2)
-            {
-                shouldFire = true;
-                return;
-            }
-            else
-            {
-                shouldFire = false;
-                return;
-            }
-        }
-        // check for targets above
-        else if (targetZ > myZ)
-        {
-            // check for targets in path give or take 2
-            if (targetX <= myX + 2 && targetX >= myX - 2)
-            {
-                shouldFire = true;
-                return;
-            }
-            else
-            {
-                shouldFire = false;
-                return;
-            }
-        }
-        // check for targets below
-        else if (targetZ < myZ)
-        {
-            // check for targets in path give or take 2
-            if (targetX <= myX + 2 && targetX >= myX - 2)
-            {
-                shouldFire = true;
-                return;
-            }
-            else
-            {
-                shouldFire = false;
-                return;
-            }
-        }
         else
         {
-            shouldFire = false;
-            return;
+            // check for targets in horizontal path of fire
+            if (targetZ <= myZ + 1.5 && targetZ >= myZ - 1.5)
+            {
+                // check if tank is facing left
+                if (GetComponent<Compass>().GetDirection() == Compass.Direction.left)
+                {
+                    return true;
+                }
+            }
+            // check for targets in vertical path of fire below
+            else if (targetX > myX - 1.5 && targetZ < myZ)
+            {
+                // check if tank is facing down
+                if (GetComponent<Compass>().GetDirection() == Compass.Direction.down)
+                {
+                    return true;
+                }
+            }
+            // check for targets in vertical path of fire above
+            else if (targetX > myX - 1.5 && targetZ > myZ)
+            {
+                // check if tank is facing up
+                if (GetComponent<Compass>().GetDirection() == Compass.Direction.up)
+                {
+                    return true;
+                }
+            }
         }
+
+        // otherwise, return false
+        return false;
+        
+        //// check for targets to the right
+        //if (targetX > myX)
+        //{
+        //    // check if target is facing proper direction
+        //    if (GetComponent<Compass>().GetDirection() == Compass.Direction.right)
+        //    {
+        //        // check for targets in path give or take 2
+        //        if (targetZ <= myZ + 1.5 && targetZ >= myZ - 1.5)
+        //        {
+        //            shouldFire = true;
+        //        }
+        //        else
+        //        {
+        //            shouldFire = false;
+        //        }
+        //    }
+        //    else
+        //    {
+        //        shouldFire = false;
+        //        return;
+        //    }
+        //}
+        //// check for targets to the left
+        //else if (targetX < myX)
+        //{
+        //    // check if target is facing proper direction
+        //    if (GetComponent<Compass>().GetDirection() == Compass.Direction.left)
+        //    {
+        //        // check for targets in path give or take 2
+        //        if (targetZ <= myZ + 1.5 && targetZ >= myZ - 1.5)
+        //        {
+        //            shouldFire = true;
+        //        }
+        //        else
+        //        {
+        //            shouldFire = false;
+        //        }
+        //    }
+        //    else
+        //    {
+        //        shouldFire = false;
+        //        return;
+        //    }
+        //}
+        //// check for targets above
+        //else if (targetZ > myZ)
+        //{
+        //    // check if target is facing proper direction
+        //    if (GetComponent<Compass>().GetDirection() == Compass.Direction.up)
+        //    {
+        //        // check for targets in path give or take 2
+        //        if (targetX <= myX + 1.5 && targetX >= myX - 1.5)
+        //        {
+        //            shouldFire = true;
+        //        }
+        //        else
+        //        {
+        //            shouldFire = false;
+        //        }
+        //    }
+        //    else
+        //    {
+        //        shouldFire = false;
+        //        return;
+        //    }
+        //}
+        //// check for targets below
+        //else if (targetZ < myZ)
+        //{
+        //    // check if target is facing proper direction
+        //    if (GetComponent<Compass>().GetDirection() == Compass.Direction.down)
+        //    {
+        //        // check for targets in path give or take 2
+        //        if (targetX <= myX + 1.5 && targetX >= myX - 1.5)
+        //        {
+        //            shouldFire = true;
+        //        }
+        //        else
+        //        {
+        //            shouldFire = false;
+        //        }
+        //    }
+        //    else
+        //    {
+        //        shouldFire = false;
+        //        return;
+        //    }
+        //}
     }
 
     // Getter function for shouldFire

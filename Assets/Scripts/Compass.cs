@@ -27,7 +27,7 @@ public class Compass : MonoBehaviour
     }
 
     // Getter function for myDirection
-    public Direction SetDirection()
+    public Direction GetDirection()
     {
         return myDirection;
     }
