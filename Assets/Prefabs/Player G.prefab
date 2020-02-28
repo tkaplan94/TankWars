@@ -285,7 +285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 875a3dfe9c5a0b442bf4010a69e6a296, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visualRadius: 15
+  visualRadius: 8
   enemy1: PlayerR
   enemy2: PlayerR
 --- !u!114 &3672842680850470555

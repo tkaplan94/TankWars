@@ -87,6 +87,11 @@ public class AI_Shooting : MonoBehaviour
                 shouldFire = true;
                 return;
             }
+            else
+            {
+                shouldFire = false;
+                return;
+            }
         }
         // check for targets to the left
         else if (targetX < myX)
@@ -95,6 +100,11 @@ public class AI_Shooting : MonoBehaviour
             if (targetZ <= myZ + 2 && targetZ >= myZ - 2)
             {
                 shouldFire = true;
+                return;
+            }
+            else
+            {
+                shouldFire = false;
                 return;
             }
         }
@@ -107,6 +117,11 @@ public class AI_Shooting : MonoBehaviour
                 shouldFire = true;
                 return;
             }
+            else
+            {
+                shouldFire = false;
+                return;
+            }
         }
         // check for targets below
         else if (targetZ < myZ)
@@ -115,6 +130,11 @@ public class AI_Shooting : MonoBehaviour
             if (targetX <= myX + 2 && targetX >= myX - 2)
             {
                 shouldFire = true;
+                return;
+            }
+            else
+            {
+                shouldFire = false;
                 return;
             }
         }
