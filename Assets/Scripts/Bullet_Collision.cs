@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletCollision : MonoBehaviour
+public class Bullet_Collision : MonoBehaviour
 {
     [SerializeField] private string enemy1;
     [SerializeField] private string enemy2;

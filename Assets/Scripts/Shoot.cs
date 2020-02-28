@@ -7,7 +7,6 @@ public class Shoot : MonoBehaviour
 	public Rigidbody bulletPrefab;
 	private GameObject tank;
     public string key;
-    public string key2;
     private double cooldown = 0;
 
     // Start is called before the first frame update
@@ -21,7 +20,7 @@ public class Shoot : MonoBehaviour
     {
 		if (cooldown <= Time.time)
 		{
-			if(Input.GetKey(key) || Input.GetKey(key2))
+			if(Input.GetKey(key) || GetComponent<AI_Shooting>().ShouldFire())
 			{
 				cooldown = Time.time + .25;
 				Rigidbody projectile;

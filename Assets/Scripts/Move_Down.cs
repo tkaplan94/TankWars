@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Move_Down : MonoBehaviour
 {
+    [SerializeField] private string key;
     private Rigidbody tank;
 
     // Start is called before the first frame update
@@ -17,10 +18,12 @@ public class Move_Down : MonoBehaviour
     {
 		tank.velocity = Vector3.zero;
 		tank.angularVelocity = Vector3.zero;
-		
-        if (GetComponent<AI_Movement>().GetDirection() == "down")
+
+        //GetComponent<AI_Movement>().GetDirection() == "down"
+        if (Input.GetKey(key))
 		{
-			tank.transform.rotation = Quaternion.LookRotation(new Vector3(0.0f, 0.0f, -2.5f), Vector3.up);
+            GetComponent<Compass>().SetDirection(Compass.Direction.down);
+            tank.transform.rotation = Quaternion.LookRotation(new Vector3(0.0f, 0.0f, -2.5f), Vector3.up);
 			tank.AddForce(new Vector3(0.0f, 0.0f, -2.5f), ForceMode.VelocityChange);
 		}		    
     }
