@@ -32,6 +32,10 @@ public class AI_Shooting : MonoBehaviour
                 shouldFire = false;
             }
         }
+        else
+        {
+            shouldFire = false;
+        }
     }
 
     // checkForTargets finds all enemies
@@ -74,6 +78,7 @@ public class AI_Shooting : MonoBehaviour
     //  whether or not target is in path
     private bool targetsInPath()
     {
+        // check if target is destroyed or inactive
         if (!target)
         {
             return false;
@@ -154,95 +159,6 @@ public class AI_Shooting : MonoBehaviour
 
         // otherwise, return false
         return false;
-        
-        //// check for targets to the right
-        //if (targetX > myX)
-        //{
-        //    // check if target is facing proper direction
-        //    if (GetComponent<Compass>().GetDirection() == Compass.Direction.right)
-        //    {
-        //        // check for targets in path give or take 2
-        //        if (targetZ <= myZ + 1.5 && targetZ >= myZ - 1.5)
-        //        {
-        //            shouldFire = true;
-        //        }
-        //        else
-        //        {
-        //            shouldFire = false;
-        //        }
-        //    }
-        //    else
-        //    {
-        //        shouldFire = false;
-        //        return;
-        //    }
-        //}
-        //// check for targets to the left
-        //else if (targetX < myX)
-        //{
-        //    // check if target is facing proper direction
-        //    if (GetComponent<Compass>().GetDirection() == Compass.Direction.left)
-        //    {
-        //        // check for targets in path give or take 2
-        //        if (targetZ <= myZ + 1.5 && targetZ >= myZ - 1.5)
-        //        {
-        //            shouldFire = true;
-        //        }
-        //        else
-        //        {
-        //            shouldFire = false;
-        //        }
-        //    }
-        //    else
-        //    {
-        //        shouldFire = false;
-        //        return;
-        //    }
-        //}
-        //// check for targets above
-        //else if (targetZ > myZ)
-        //{
-        //    // check if target is facing proper direction
-        //    if (GetComponent<Compass>().GetDirection() == Compass.Direction.up)
-        //    {
-        //        // check for targets in path give or take 2
-        //        if (targetX <= myX + 1.5 && targetX >= myX - 1.5)
-        //        {
-        //            shouldFire = true;
-        //        }
-        //        else
-        //        {
-        //            shouldFire = false;
-        //        }
-        //    }
-        //    else
-        //    {
-        //        shouldFire = false;
-        //        return;
-        //    }
-        //}
-        //// check for targets below
-        //else if (targetZ < myZ)
-        //{
-        //    // check if target is facing proper direction
-        //    if (GetComponent<Compass>().GetDirection() == Compass.Direction.down)
-        //    {
-        //        // check for targets in path give or take 2
-        //        if (targetX <= myX + 1.5 && targetX >= myX - 1.5)
-        //        {
-        //            shouldFire = true;
-        //        }
-        //        else
-        //        {
-        //            shouldFire = false;
-        //        }
-        //    }
-        //    else
-        //    {
-        //        shouldFire = false;
-        //        return;
-        //    }
-        //}
     }
 
     // Getter function for shouldFire
