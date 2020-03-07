@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 8017382320525179910}
   - component: {fileID: 8017382320525179928}
   - component: {fileID: 8017382320525179911}
+  - component: {fileID: 8666979144660278166}
   - component: {fileID: 413824353045171825}
   - component: {fileID: 8017382320525179934}
   m_Layer: 0
@@ -100,8 +101,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.05, y: 1, z: 1.36}
+  m_Center: {x: 0, y: 0, z: 0.17}
 --- !u!54 &8017382320525179929
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -195,6 +196,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: right
+--- !u!114 &8666979144660278166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8017382320525179908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1263dfeeb35ed5042b42897c8cf43f02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &413824353045171825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,7 +220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 875a3dfe9c5a0b442bf4010a69e6a296, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visualRadius: 8
+  visualRadius: 10
   enemy1: PlayerG
   enemy2: PlayerG
 --- !u!114 &8017382320525179934

@@ -19,8 +19,8 @@ public class Move_Up : MonoBehaviour
 		tank.velocity = Vector3.zero;
 		tank.angularVelocity = Vector3.zero;
 
-        //GetComponent<AI_Movement>().GetDirection() == "up"
-        if (Input.GetKey(key))
+        // if AI chose "up"
+        if (Input.GetKey(key) || GetComponent<AI_Movement>().GetDirection() == "up")
 		{
             GetComponent<Compass>().SetDirection(Compass.Direction.up);
 			tank.transform.rotation = Quaternion.LookRotation(new Vector3(0.0f, 0.0f, 2.5f), Vector3.up);

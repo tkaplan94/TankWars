@@ -19,8 +19,8 @@ public class Move_Left : MonoBehaviour
 		tank.velocity = Vector3.zero;
 		tank.angularVelocity = Vector3.zero;
 
-        // GetComponent<AI_Movement>().GetDirection() == "left"
-        if (Input.GetKey(key))
+        // if AI chose "left"
+        if (Input.GetKey(key) || GetComponent<AI_Movement>().GetDirection() == "left")
 		{
             GetComponent<Compass>().SetDirection(Compass.Direction.left);
             tank.transform.rotation = Quaternion.LookRotation(new Vector3(-2.5f, 0.0f, 0.0f), Vector3.up);

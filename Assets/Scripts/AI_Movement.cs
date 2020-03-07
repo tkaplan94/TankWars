@@ -39,4 +39,30 @@ public class AI_Movement : MonoBehaviour
     {
         return direction;
     }
+
+    // faces tank in opposite direction
+    public void turnAround()
+    {
+        switch(direction)
+        {
+            case "up":
+                direction = "down";
+                break;
+            case "down":
+                direction = "up";
+                break;
+            case "left":
+                direction = "right";
+                break;
+            case "right":
+                direction = "left";
+                break;
+        }
+    }
+
+    // reset changeDirTimer
+    public void resetChangeDirTimer()
+    {
+        changeDirTimer = changeDirCooldown;
+    }
 }

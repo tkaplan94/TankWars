@@ -19,8 +19,8 @@ public class Move_Right : MonoBehaviour
 		tank.velocity = Vector3.zero;
 		tank.angularVelocity = Vector3.zero;
 
-        // GetComponent<AI_Movement>().GetDirection() == "right"
-        if (Input.GetKey(key))
+        // if AI chose "right"
+        if (Input.GetKey(key) || GetComponent<AI_Movement>().GetDirection() == "right")
 		{
             GetComponent<Compass>().SetDirection(Compass.Direction.right);
             tank.transform.rotation = Quaternion.LookRotation(new Vector3(2.5f, 0.0f, 0.0f), Vector3.up);

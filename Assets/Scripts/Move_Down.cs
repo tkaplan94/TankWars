@@ -19,8 +19,8 @@ public class Move_Down : MonoBehaviour
 		tank.velocity = Vector3.zero;
 		tank.angularVelocity = Vector3.zero;
 
-        //GetComponent<AI_Movement>().GetDirection() == "down"
-        if (Input.GetKey(key))
+        // if AI chose "down"
+        if (Input.GetKey(key) || GetComponent<AI_Movement>().GetDirection() == "down")
 		{
             GetComponent<Compass>().SetDirection(Compass.Direction.down);
             tank.transform.rotation = Quaternion.LookRotation(new Vector3(0.0f, 0.0f, -2.5f), Vector3.up);
