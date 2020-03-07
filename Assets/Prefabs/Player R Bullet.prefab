@@ -122,6 +122,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20b67b83c438e0e439ea0854d2607e1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartingTank: {fileID: 0}
-  enemy1: PlayerG
-  enemy2: PlayerG
+  enemyTag1: PlayerG
+  enemyTag2: PlayerY

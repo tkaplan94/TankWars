@@ -221,8 +221,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visualRadius: 10
-  enemyTag1: 
-  enemyTag2: 
+  enemyTag1: PlayerG
+  enemyTag2: PlayerY
 --- !u!114 &8017382320525179934
 MonoBehaviour:
   m_ObjectHideFlags: 0

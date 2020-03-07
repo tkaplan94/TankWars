@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 2701162258262826807}
   m_Layer: 0
   m_Name: Player Y
-  m_TagString: Untagged
+  m_TagString: PlayerY
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d0a3e0a5235ed547997051bb7f1b1cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changeDirCooldown: 0
+  changeDirCooldown: 100
 --- !u!114 &2373736759230211943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7026de3b43b3e3646ba2f75c4feebf13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 
+  key: 4
 --- !u!114 &2941671839463361412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ff7a33956231d4bb62982ad2423b77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 
+  key: 3
 --- !u!114 &6594329106053300275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,7 +182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35606877c238bc04e9f3e0f872222bf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 
+  key: 2
 --- !u!114 &5648355921232871365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33840c99adb566348ba6493c6a7c1bfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 
+  key: 1
 --- !u!114 &2275798676114695590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,9 +220,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 875a3dfe9c5a0b442bf4010a69e6a296, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visualRadius: 0
-  enemyTag1: 
-  enemyTag2: 
+  visualRadius: 10
+  enemyTag1: PlayerG
+  enemyTag2: PlayerR
 --- !u!114 &2701162258262826807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,8 +235,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46eb99e3c4e801b4fab085b9f7cd74da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 0}
-  key: 
+  bulletPrefab: {fileID: 7523155490860011282, guid: 4cd06f28530a6f04c8c9ec151823c329,
+    type: 3}
+  key: y
 --- !u!1 &1464339526784252148
 GameObject:
   m_ObjectHideFlags: 0

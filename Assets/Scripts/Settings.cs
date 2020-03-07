@@ -27,11 +27,11 @@ public class Settings : MonoBehaviour
         Instantiate(greenTankPrefab, positionG1, Quaternion.identity);
         Instantiate(greenTankPrefab, positionG2, Quaternion.identity);
         Instantiate(greenTankPrefab, positionG3, Quaternion.identity);
-        Instantiate(greenTankPrefab, positionR1, Quaternion.identity);
-        Instantiate(greenTankPrefab, positionR2, Quaternion.identity);
-        Instantiate(greenTankPrefab, positionR3, Quaternion.identity);
-        Instantiate(greenTankPrefab, positionY1, Quaternion.identity);
-        Instantiate(greenTankPrefab, positionY2, Quaternion.identity);
-        Instantiate(greenTankPrefab, positionY3, Quaternion.identity);
+        Instantiate(redTankPrefab, positionR1, Quaternion.identity);
+        Instantiate(redTankPrefab, positionR2, Quaternion.identity);
+        Instantiate(redTankPrefab, positionR3, Quaternion.identity);
+        Instantiate(yellowTankPrefab, positionY1, Quaternion.identity);
+        Instantiate(yellowTankPrefab, positionY2, Quaternion.identity);
+        Instantiate(yellowTankPrefab, positionY3, Quaternion.identity);
     }
 }

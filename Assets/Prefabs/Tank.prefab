@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d0a3e0a5235ed547997051bb7f1b1cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changeDirCooldown: 0
+  changeDirCooldown: 100
 --- !u!114 &1200527798075446582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,7 +220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 875a3dfe9c5a0b442bf4010a69e6a296, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visualRadius: 0
+  visualRadius: 10
   enemyTag1: 
   enemyTag2: 
 --- !u!114 &1523448579170135398

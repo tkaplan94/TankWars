@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Bullet_Collision : MonoBehaviour
 {
-    [SerializeField] private string enemy1;
-    [SerializeField] private string enemy2;
+    [SerializeField] private string enemyTag1;
+    [SerializeField] private string enemyTag2;
 
     private void OnTriggerEnter(Collider other)
 	{
         // if bullet collided with either enemy
-        if (other.gameObject.tag == enemy1 || other.gameObject.tag == enemy2)
+        if (other.gameObject.tag == enemyTag1 || other.gameObject.tag == enemyTag2)
 		{
 			Destroy(other.gameObject);
 			Destroy(this.gameObject);
