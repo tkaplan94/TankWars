@@ -5,8 +5,8 @@ using UnityEngine;
 public class AI_Shooting : MonoBehaviour
 {
     [SerializeField] private float visualRadius;
-    [SerializeField] private string enemy1;
-    [SerializeField] private string enemy2;
+    [SerializeField] private string enemyTag1;
+    [SerializeField] private string enemyTag2;
 
     private GameObject target;
     private bool shouldFire;
@@ -45,12 +45,12 @@ public class AI_Shooting : MonoBehaviour
         GameObject[] tempTargets;
         
         // get both teams (arrays of targets) into one list
-        tempTargets = GameObject.FindGameObjectsWithTag(enemy1);
+        tempTargets = GameObject.FindGameObjectsWithTag(enemyTag1);
         for (int i = 0; i < tempTargets.Length; i++)
         {
             targets.Add(tempTargets[i]);
         }
-        tempTargets = GameObject.FindGameObjectsWithTag(enemy2);
+        tempTargets = GameObject.FindGameObjectsWithTag(enemyTag2);
         for (int i = 0; i < tempTargets.Length; i++)
         {
             targets.Add(tempTargets[i]);
