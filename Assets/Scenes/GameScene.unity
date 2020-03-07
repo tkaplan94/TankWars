@@ -120,6 +120,55 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 03dc70284e0b1e040a8e4eafebe02110, type: 2}
+--- !u!1 &416517428
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 416517430}
+  - component: {fileID: 416517429}
+  m_Layer: 0
+  m_Name: Load Tanks
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &416517429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 416517428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1ec44063bd249d48a4a14dae5de8cef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  greenTankPrefab: {fileID: 3672842680850470541, guid: 3c3903bd06b1c014c909473459211eba,
+    type: 3}
+  redTankPrefab: {fileID: 8017382320525179908, guid: 2cd9ef6ed86478f4c98b760b81d01549,
+    type: 3}
+  yellowTankPrefab: {fileID: 1464339526620520902, guid: 9a7c96d180df96940930e90f3d4fea69,
+    type: 3}
+--- !u!4 &416517430
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 416517428}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 300.9165, y: 198.6659, z: -2.1932917}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -400,57 +449,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!1 &1252327158
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1252327160}
-  - component: {fileID: 1252327159}
-  m_Layer: 0
-  m_Name: Game Settings
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1252327159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1252327158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f231ea2a97b3893429f813658a1f9bdb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  numOfTeams: 0
-  numOfTanks: 0
-  greenTankPrefab: {fileID: 3672842680850470541, guid: 3c3903bd06b1c014c909473459211eba,
-    type: 3}
-  redTankPrefab: {fileID: 8017382320525179908, guid: 2cd9ef6ed86478f4c98b760b81d01549,
-    type: 3}
-  yellowTankPrefab: {fileID: 1464339526620520902, guid: 9a7c96d180df96940930e90f3d4fea69,
-    type: 3}
---- !u!4 &1252327160
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1252327158}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1598012090
 GameObject:
   m_ObjectHideFlags: 0
