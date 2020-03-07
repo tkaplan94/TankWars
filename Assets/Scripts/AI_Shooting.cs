@@ -66,10 +66,6 @@ public class AI_Shooting : MonoBehaviour
                 target = targets[i];
                 return true;
             }
-            else
-            {
-                return false;
-            }
         }
         return false;
     }
