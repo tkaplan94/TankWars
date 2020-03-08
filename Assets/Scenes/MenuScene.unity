@@ -302,7 +302,7 @@ RectTransform:
   m_GameObject: {fileID: 81951429}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 3, z: 1}
+  m_LocalScale: {x: 7, y: 5, z: 1}
   m_Children:
   - {fileID: 1858820616}
   - {fileID: 1511517983}
@@ -2516,7 +2516,7 @@ RectTransform:
   m_GameObject: {fileID: 936885502}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 188193256}
   m_RootOrder: 0
@@ -2906,8 +2906,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f231ea2a97b3893429f813658a1f9bdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numOfTeams: 2
-  numOfTanks: 2
+  numOfTeams: 3
+  numOfTanks: 3
 --- !u!4 &1014750933
 Transform:
   m_ObjectHideFlags: 0
@@ -4147,7 +4147,7 @@ RectTransform:
   m_GameObject: {fileID: 1799503264}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 3, z: 1}
+  m_LocalScale: {x: 7, y: 5, z: 1}
   m_Children:
   - {fileID: 47678870}
   - {fileID: 1280330654}
