@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Move_Up : MonoBehaviour
 {
-    [SerializeField] private string key;
     private Rigidbody tank;
 
     // Start is called before the first frame update
@@ -20,7 +19,7 @@ public class Move_Up : MonoBehaviour
 		tank.angularVelocity = Vector3.zero;
 
         // if AI chose "up"
-        if (Input.GetKey(key) || GetComponent<AI_Movement>().GetDirection() == "up")
+        if (GetComponent<AI_Movement>().GetDirection() == "up")
 		{
             GetComponent<Compass>().SetDirection(Compass.Direction.up);
 			tank.transform.rotation = Quaternion.LookRotation(new Vector3(0.0f, 0.0f, 2.5f), Vector3.up);

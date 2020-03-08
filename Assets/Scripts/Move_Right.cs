@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Move_Right : MonoBehaviour
 {
-    [SerializeField] private string key;
     private Rigidbody tank;
 
     // Start is called before the first frame update
@@ -20,7 +19,7 @@ public class Move_Right : MonoBehaviour
 		tank.angularVelocity = Vector3.zero;
 
         // if AI chose "right"
-        if (Input.GetKey(key) || GetComponent<AI_Movement>().GetDirection() == "right")
+        if (GetComponent<AI_Movement>().GetDirection() == "right")
 		{
             GetComponent<Compass>().SetDirection(Compass.Direction.right);
             tank.transform.rotation = Quaternion.LookRotation(new Vector3(2.5f, 0.0f, 0.0f), Vector3.up);
