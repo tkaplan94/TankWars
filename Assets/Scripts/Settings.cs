@@ -6,6 +6,37 @@ public class Settings : MonoBehaviour
 {
     [SerializeField] private int numOfTeams;
     [SerializeField] private int numOfTanks;
+    private int totalNumOfTanks;
+
+    // Update is called once per frame
+    void Start()
+    {
+        totalNumOfTanks = numOfTeams * numOfTanks;
+        Debug.Log("Total number of tanks: " + totalNumOfTanks);
+    }
+
+    // decreases number of tanks on the field
+    public void decrementTanks(string tag)
+    {
+        totalNumOfTanks--;
+        Debug.Log("Total number of tanks: " + totalNumOfTanks);
+
+        if (totalNumOfTanks == 1)
+        {
+            switch (tag)
+            {
+                case "BulletG":
+                    Debug.Log("Green Team wins!!");
+                    break;
+                case "BulletR":
+                    Debug.Log("Red Team wins!!");
+                    break;
+                case "BulletY":
+                    Debug.Log("Yellow Team wins!!");
+                    break;
+            }
+        }
+    }
 
     // Setter Function for default values
     public void SetDefaultValues()
