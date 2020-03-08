@@ -38,7 +38,7 @@ public class AI_Shooting : MonoBehaviour
         }
     }
 
-    // checkForTargets finds all enemies
+    // checkForTargets finds all enemies in a radius
     private bool targetsInRadius()
     {
         List<GameObject> targets = new List<GameObject>();

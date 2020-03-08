@@ -19,6 +19,7 @@ public class Shoot : MonoBehaviour
     {
 		if (cooldown <= Time.time)
 		{
+            // if AI chose to shoot
 			if(GetComponent<AI_Shooting>().ShouldFire())
 			{
 				cooldown = Time.time + .25;

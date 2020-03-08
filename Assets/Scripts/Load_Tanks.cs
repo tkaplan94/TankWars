@@ -10,6 +10,7 @@ public class Load_Tanks : MonoBehaviour
     [SerializeField] private GameObject redTankPrefab;
     [SerializeField] private GameObject yellowTankPrefab;
 
+    // preset locations for tanks
     Vector3 positionG1 = new Vector3(-10f, 0.5f, -5f);
     Vector3 positionG2 = new Vector3(-15f, 0.5f, -5f);
     Vector3 positionG3 = new Vector3(-12.5f, 0.5f, -7f);
@@ -20,21 +21,10 @@ public class Load_Tanks : MonoBehaviour
     Vector3 positionY2 = new Vector3(2.5f, 0.5f, 5f);
     Vector3 positionY3 = new Vector3(0f, 0.5f, 7f);
 
+    // Instantiates tanks based on Settings
     void Awake()
     {
         gameSettings = GameObject.Find("Game Settings");
-
-        int teams = gameSettings.GetComponent<Settings>().GetNumOfTeams();
-        int tanks = gameSettings.GetComponent<Settings>().GetNumOfTanks();
-        if (teams == 2)
-        {
-            gameSettings.GetComponent<Settings>().initNumOfTanksInTeams(tanks, tanks, 0);
-        }
-        else
-        {
-            gameSettings.GetComponent<Settings>().initNumOfTanksInTeams(tanks, tanks, tanks);
-        }
-        Debug.Log("Number of teams: " + teams);
 
         // 2 teams
         if (gameSettings.GetComponent<Settings>().GetNumOfTeams() == 2)
