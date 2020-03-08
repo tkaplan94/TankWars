@@ -234,7 +234,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7026de3b43b3e3646ba2f75c4feebf13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: w
 --- !u!114 &3672842680850470554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,7 +246,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ff7a33956231d4bb62982ad2423b77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: s
 --- !u!114 &3672842680850470550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,7 +258,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35606877c238bc04e9f3e0f872222bf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: a
 --- !u!114 &3672842680850470548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -273,7 +270,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33840c99adb566348ba6493c6a7c1bfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: d
 --- !u!114 &2031365392623305179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -298,7 +294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 875a3dfe9c5a0b442bf4010a69e6a296, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visualRadius: 10
+  visualRadius: 12
   enemyTag1: PlayerR
   enemyTag2: PlayerY
 --- !u!114 &3672842680850470555
@@ -315,4 +311,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 7835871656045683477, guid: 22e0fab3339939948a1a27b2cd7a1e65,
     type: 3}
-  key: space
