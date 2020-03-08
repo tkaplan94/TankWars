@@ -23,6 +23,19 @@ public class Load_Tanks : MonoBehaviour
     void Awake()
     {
         gameSettings = GameObject.Find("Game Settings");
+
+        int teams = gameSettings.GetComponent<Settings>().GetNumOfTeams();
+        int tanks = gameSettings.GetComponent<Settings>().GetNumOfTanks();
+        if (teams == 2)
+        {
+            gameSettings.GetComponent<Settings>().initNumOfTanksInTeams(tanks, tanks, 0);
+        }
+        else
+        {
+            gameSettings.GetComponent<Settings>().initNumOfTanksInTeams(tanks, tanks, tanks);
+        }
+        Debug.Log("Number of teams: " + teams);
+
         // 2 teams
         if (gameSettings.GetComponent<Settings>().GetNumOfTeams() == 2)
         {
@@ -89,15 +102,5 @@ public class Load_Tanks : MonoBehaviour
                 Instantiate(yellowTankPrefab, positionY3, Quaternion.identity);
             }
         }
-
-        //Instantiate(greenTankPrefab, positionG1, Quaternion.identity);
-        //Instantiate(greenTankPrefab, positionG2, Quaternion.identity);
-        //Instantiate(greenTankPrefab, positionG3, Quaternion.identity);
-        //Instantiate(redTankPrefab, positionR1, Quaternion.identity);
-        //Instantiate(redTankPrefab, positionR2, Quaternion.identity);
-        //Instantiate(redTankPrefab, positionR3, Quaternion.identity);
-        //Instantiate(yellowTankPrefab, positionY1, Quaternion.identity);
-        //Instantiate(yellowTankPrefab, positionY2, Quaternion.identity);
-        //Instantiate(yellowTankPrefab, positionY3, Quaternion.identity);
     }
 }

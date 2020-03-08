@@ -6,35 +6,65 @@ public class Settings : MonoBehaviour
 {
     [SerializeField] private int numOfTeams;
     [SerializeField] private int numOfTanks;
-    private int totalNumOfTanks;
+
+    private int numOfGreenTanks;
+    private int numOfRedTanks;
+    private int numOfYellowTanks;
 
     // Update is called once per frame
-    void Start()
+    void Update()
     {
-        totalNumOfTanks = numOfTeams * numOfTanks;
-        Debug.Log("Total number of tanks: " + totalNumOfTanks);
+        checkForGameOver();
+    }
+
+    // initialize number of tanks in each team
+    public void initNumOfTanksInTeams(int g, int r, int y)
+    {
+        numOfGreenTanks = g;
+        numOfRedTanks = r;
+        numOfYellowTanks = y;
     }
 
     // decreases number of tanks on the field
-    public void decrementTanks(string tag)
+    //  and check if team has been eliminated
+    public void decrementTanks(string tagOfVictim)
     {
-        totalNumOfTanks--;
-        Debug.Log("Total number of tanks: " + totalNumOfTanks);
-
-        if (totalNumOfTanks == 1)
+        switch (tagOfVictim)
         {
-            switch (tag)
-            {
-                case "BulletG":
-                    Debug.Log("Green Team wins!!");
-                    break;
-                case "BulletR":
-                    Debug.Log("Red Team wins!!");
-                    break;
-                case "BulletY":
-                    Debug.Log("Yellow Team wins!!");
-                    break;
-            }
+            case "PlayerG":
+                numOfGreenTanks--;
+                if (numOfGreenTanks <= 0)
+                {
+                    numOfTeams--;
+                    Debug.Log("Number of teams left: " + numOfTeams);
+                }
+                break;
+            case "PlayerR":
+                numOfRedTanks--;
+                if (numOfRedTanks <= 0)
+                {
+                    numOfTeams--;
+                    Debug.Log("Number of teams left: " + numOfTeams);
+                }
+                break;
+            case "PlayerY":
+                numOfYellowTanks--;
+                if (numOfYellowTanks <= 0)
+                {
+                    numOfTeams--;
+                    Debug.Log("Number of teams left: " + numOfTeams);
+                }
+                break;
+        }
+
+    }
+
+    // checks if game is over/won
+    public void checkForGameOver()
+    {
+        if (numOfTeams <= 1)
+        {
+            Debug.Log("Game Over!!");
         }
     }
 

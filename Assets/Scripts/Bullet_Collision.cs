@@ -9,9 +9,12 @@ public class Bullet_Collision : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
 	{
+        GameObject gameSettings = GameObject.Find("Game Settings");
+
         // if bullet collided with either enemy
         if (other.gameObject.tag == enemyTag1 || other.gameObject.tag == enemyTag2)
 		{
+            gameSettings.GetComponent<Settings>().decrementTanks(other.tag);
 			Destroy(other.gameObject);
 			Destroy(this.gameObject);
 		}
