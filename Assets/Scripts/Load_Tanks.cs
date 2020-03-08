@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Load_Tanks : MonoBehaviour
 {
+    private GameObject gameSettings;
+    
     [SerializeField] private GameObject greenTankPrefab;
     [SerializeField] private GameObject redTankPrefab;
     [SerializeField] private GameObject yellowTankPrefab;
@@ -18,17 +20,84 @@ public class Load_Tanks : MonoBehaviour
     Vector3 positionY2 = new Vector3(2.5f, 0.5f, 5f);
     Vector3 positionY3 = new Vector3(0f, 0.5f, 7f);
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        Instantiate(greenTankPrefab, positionG1, Quaternion.identity);
-        Instantiate(greenTankPrefab, positionG2, Quaternion.identity);
-        Instantiate(greenTankPrefab, positionG3, Quaternion.identity);
-        Instantiate(redTankPrefab, positionR1, Quaternion.identity);
-        Instantiate(redTankPrefab, positionR2, Quaternion.identity);
-        Instantiate(redTankPrefab, positionR3, Quaternion.identity);
-        Instantiate(yellowTankPrefab, positionY1, Quaternion.identity);
-        Instantiate(yellowTankPrefab, positionY2, Quaternion.identity);
-        Instantiate(yellowTankPrefab, positionY3, Quaternion.identity);
+        gameSettings = GameObject.Find("Game Settings");
+        // 2 teams
+        if (gameSettings.GetComponent<Settings>().GetNumOfTeams() == 2)
+        {
+            // 2 tanks per team
+            if (gameSettings.GetComponent<Settings>().GetNumOfTanks() == 2)
+            {
+                // Instantiate Green Team
+                Instantiate(greenTankPrefab, positionG1, Quaternion.identity);
+                Instantiate(greenTankPrefab, positionG2, Quaternion.identity);
+
+                // Instantiate Red Team
+                Instantiate(redTankPrefab, positionR1, Quaternion.identity);
+                Instantiate(redTankPrefab, positionR2, Quaternion.identity);
+            }
+            // 3 tanks per team
+            else
+            {
+                // Instantiate Green Team
+                Instantiate(greenTankPrefab, positionG1, Quaternion.identity);
+                Instantiate(greenTankPrefab, positionG2, Quaternion.identity);
+                Instantiate(greenTankPrefab, positionG3, Quaternion.identity);
+
+                // Instantiate Red Team
+                Instantiate(redTankPrefab, positionR1, Quaternion.identity);
+                Instantiate(redTankPrefab, positionR2, Quaternion.identity);
+                Instantiate(redTankPrefab, positionR3, Quaternion.identity);
+            }
+
+        }
+        // 3 teams
+        else
+        {
+            // 2 tanks per team
+            if (gameSettings.GetComponent<Settings>().GetNumOfTanks() == 2)
+            {
+                // Instantiate Green Team
+                Instantiate(greenTankPrefab, positionG1, Quaternion.identity);
+                Instantiate(greenTankPrefab, positionG2, Quaternion.identity);
+
+                // Instantiate Red Team
+                Instantiate(redTankPrefab, positionR1, Quaternion.identity);
+                Instantiate(redTankPrefab, positionR2, Quaternion.identity);
+
+                // Instantiate Yellow Team
+                Instantiate(yellowTankPrefab, positionY1, Quaternion.identity);
+                Instantiate(yellowTankPrefab, positionY2, Quaternion.identity);
+            }
+            // 3 tanks per team
+            else
+            {
+                // Instantiate Green Team
+                Instantiate(greenTankPrefab, positionG1, Quaternion.identity);
+                Instantiate(greenTankPrefab, positionG2, Quaternion.identity);
+                Instantiate(greenTankPrefab, positionG3, Quaternion.identity);
+
+                // Instantiate Red Team
+                Instantiate(redTankPrefab, positionR1, Quaternion.identity);
+                Instantiate(redTankPrefab, positionR2, Quaternion.identity);
+                Instantiate(redTankPrefab, positionR3, Quaternion.identity);
+
+                // Instantiate Yellow Team
+                Instantiate(yellowTankPrefab, positionY1, Quaternion.identity);
+                Instantiate(yellowTankPrefab, positionY2, Quaternion.identity);
+                Instantiate(yellowTankPrefab, positionY3, Quaternion.identity);
+            }
+        }
+
+        //Instantiate(greenTankPrefab, positionG1, Quaternion.identity);
+        //Instantiate(greenTankPrefab, positionG2, Quaternion.identity);
+        //Instantiate(greenTankPrefab, positionG3, Quaternion.identity);
+        //Instantiate(redTankPrefab, positionR1, Quaternion.identity);
+        //Instantiate(redTankPrefab, positionR2, Quaternion.identity);
+        //Instantiate(redTankPrefab, positionR3, Quaternion.identity);
+        //Instantiate(yellowTankPrefab, positionY1, Quaternion.identity);
+        //Instantiate(yellowTankPrefab, positionY2, Quaternion.identity);
+        //Instantiate(yellowTankPrefab, positionY3, Quaternion.identity);
     }
 }

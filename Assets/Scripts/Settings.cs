@@ -7,18 +7,49 @@ public class Settings : MonoBehaviour
     [SerializeField] private int numOfTeams;
     [SerializeField] private int numOfTanks;
 
-    void Awake()
+    // Setter Function for default values
+    public void SetDefaultValues()
     {
-        DontDestroyOnLoad(this.gameObject);
+        numOfTeams = 2;
+        numOfTanks = 2;
     }
 
-    public void SetNumOfTeams(int teams)
+    // Setter Function for number of teams based on Settings Menu options
+    public void SetNumOfTeams(int teamsIndex)
     {
-        numOfTeams = teams;
+        if (teamsIndex == 0)
+        {
+            numOfTeams = 2;
+        }
+        else
+        {
+            numOfTeams = 3;
+        }
     }
 
-    public void SetNumOfTanks(int tanks)
+    // Setter Function for number of tanks based on Settings Menu options
+    public void SetNumOfTanks(int tanksIndex)
     {
-        numOfTanks = tanks;
+        if (tanksIndex == 0)
+        {
+            numOfTanks = 2;
+        }
+        else
+        {
+            numOfTanks = 3;
+        }
     }
+
+    // Getter Function for number of teams to Instantiate
+    public int GetNumOfTeams()
+    {
+        return numOfTeams;
+    }
+
+    // Getter Function for number of tanks to Instantiate
+    public int GetNumOfTanks()
+    {
+        return numOfTanks;
+    }
+
 }
