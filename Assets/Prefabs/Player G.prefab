@@ -221,7 +221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d0a3e0a5235ed547997051bb7f1b1cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changeDirCooldown: 150
+  changeDirCooldown: 125
 --- !u!114 &3672842680850470549
 MonoBehaviour:
   m_ObjectHideFlags: 0

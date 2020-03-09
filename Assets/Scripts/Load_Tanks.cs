@@ -24,7 +24,6 @@ public class Load_Tanks : MonoBehaviour
     private int numOfActiveGreenTanks;
     private int numOfActiveRedTanks;
     private int numOfActiveYellowTanks;
-    private string winningTeam;
 
     // Instantiates tanks based on Game Settings
     void Awake()
@@ -103,29 +102,6 @@ public class Load_Tanks : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (numOfActiveTeams <= 1)
-        {
-            // if green tanks remain
-            if (numOfActiveGreenTanks >= 1)
-            {
-                //Debug.Log("Green Team wins!!");
-            }
-            // if red tanks remain
-            else if (numOfActiveRedTanks >= 1)
-            {
-                //Debug.Log("Red Team wins!!");
-            }
-            // if yellow tanks remain
-            else if (numOfActiveRedTanks >= 1)
-            {
-                //Debug.Log("Yellow Team wins!!");
-            }
-        }
-    }
-
     // decreases number of enemy tanks
     public void decrementTanks(string enemy)
     {
@@ -153,5 +129,29 @@ public class Load_Tanks : MonoBehaviour
                 }
                 break;
         }
+    }
+
+    // Getter Function for numOfActiveTeams
+    public int GetNumOfActiveTeams()
+    {
+        return numOfActiveTeams;
+    }
+
+    // Getter Function for numOfActiveGreenTanks
+    public int GetNumOfActiveGreenTanks()
+    {
+        return numOfActiveGreenTanks;
+    }
+
+    // Getter Function for numOfActiveRedTanks
+    public int GetNumOfActiveRedTanks()
+    {
+        return numOfActiveRedTanks;
+    }
+
+    // Getter Function for numOfActiveYellowTanks
+    public int GetNumOfActiveYellowTanks()
+    {
+        return numOfActiveYellowTanks;
     }
 }
