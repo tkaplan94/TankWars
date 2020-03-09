@@ -4,30 +4,39 @@ using UnityEngine;
 
 public class Load_Tanks : MonoBehaviour
 {
-    private GameObject gameSettings;
-    
     [SerializeField] private GameObject greenTankPrefab;
     [SerializeField] private GameObject redTankPrefab;
     [SerializeField] private GameObject yellowTankPrefab;
 
     // preset locations for tanks
-    Vector3 positionG1 = new Vector3(-10f, 0.5f, -5f);
-    Vector3 positionG2 = new Vector3(-15f, 0.5f, -5f);
-    Vector3 positionG3 = new Vector3(-12.5f, 0.5f, -7f);
-    Vector3 positionR1 = new Vector3(10f, 0.5f, -5f);
-    Vector3 positionR2 = new Vector3(15f, 0.5f, -5f);
-    Vector3 positionR3 = new Vector3(12.5f, 0.5f, -7f);
-    Vector3 positionY1 = new Vector3(-2.5f, 0.5f, 5f);
-    Vector3 positionY2 = new Vector3(2.5f, 0.5f, 5f);
-    Vector3 positionY3 = new Vector3(0f, 0.5f, 7f);
+    private Vector3 positionG1 = new Vector3(-7.5f, 0.5f, -5f);
+    private Vector3 positionG2 = new Vector3(-12.5f, 0.5f, -5f);
+    private Vector3 positionG3 = new Vector3(-10f, 0.5f, -7f);
+    private Vector3 positionR1 = new Vector3(7.5f, 0.5f, -5f);
+    private Vector3 positionR2 = new Vector3(12.5f, 0.5f, -5f);
+    private Vector3 positionR3 = new Vector3(10f, 0.5f, -7f);
+    private Vector3 positionY1 = new Vector3(-2.5f, 0.5f, 5f);
+    private Vector3 positionY2 = new Vector3(2.5f, 0.5f, 5f);
+    private Vector3 positionY3 = new Vector3(0f, 0.5f, 7f);
 
-    // Instantiates tanks based on Settings
+    // used to determine when game is over
+    private int numOfActiveTeams;
+    private int numOfActiveGreenTanks;
+    private int numOfActiveRedTanks;
+    private int numOfActiveYellowTanks;
+    private string winningTeam;
+
+    // Instantiates tanks based on Game Settings
     void Awake()
     {
-        gameSettings = GameObject.Find("Game Settings");
+        GameObject gameSettings = GameObject.Find("Game Settings");
+        numOfActiveTeams = gameSettings.GetComponent<Settings>().GetNumOfTeams();
+        numOfActiveGreenTanks = gameSettings.GetComponent<Settings>().GetNumOfTanks();
+        numOfActiveRedTanks = gameSettings.GetComponent<Settings>().GetNumOfTanks();
+        numOfActiveYellowTanks = gameSettings.GetComponent<Settings>().GetNumOfTanks();
 
         // 2 teams
-        if (gameSettings.GetComponent<Settings>().GetNumOfTeams() == 2)
+        if (numOfActiveTeams == 2)
         {
             // 2 tanks per team
             if (gameSettings.GetComponent<Settings>().GetNumOfTanks() == 2)
@@ -91,6 +100,58 @@ public class Load_Tanks : MonoBehaviour
                 Instantiate(yellowTankPrefab, positionY2, Quaternion.identity);
                 Instantiate(yellowTankPrefab, positionY3, Quaternion.identity);
             }
+        }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (numOfActiveTeams <= 1)
+        {
+            // if green tanks remain
+            if (numOfActiveGreenTanks >= 1)
+            {
+                //Debug.Log("Green Team wins!!");
+            }
+            // if red tanks remain
+            else if (numOfActiveRedTanks >= 1)
+            {
+                //Debug.Log("Red Team wins!!");
+            }
+            // if yellow tanks remain
+            else if (numOfActiveRedTanks >= 1)
+            {
+                //Debug.Log("Yellow Team wins!!");
+            }
+        }
+    }
+
+    // decreases number of enemy tanks
+    public void decrementTanks(string enemy)
+    {
+        switch (enemy)
+        {
+            case "PlayerG":
+                numOfActiveGreenTanks--;
+                if (numOfActiveGreenTanks == 0)
+                {
+                    numOfActiveTeams--;
+                } 
+                break;
+            case "PlayerR":
+                numOfActiveRedTanks--;
+                if (numOfActiveRedTanks == 0)
+                {
+                    numOfActiveTeams--;
+                }
+                break;
+            case "PlayerY":
+                numOfActiveYellowTanks--;
+                if (numOfActiveYellowTanks == 0)
+                {
+                    numOfActiveTeams--;
+                }
+                break;
         }
     }
 }

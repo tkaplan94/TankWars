@@ -74,12 +74,6 @@ public class AI_Shooting : MonoBehaviour
     //  whether or not target is in path
     private bool targetsInPath()
     {
-        // check if target is destroyed or inactive
-        if (!target)
-        {
-            return false;
-        }
- 
         float myZ = this.transform.position.z;
         float myX = this.transform.position.x;
         float targetZ = target.transform.position.z;
@@ -89,7 +83,7 @@ public class AI_Shooting : MonoBehaviour
         if (targetX > myX)
         {
             // check for targets in horizontal path of fire
-            if (targetZ <= myZ + 1.5 && targetZ >= myZ - 1.5)
+            if (targetZ <= myZ + 2 && targetZ >= myZ - 2)
             {
                 // check if tank is facing right
                 if (GetComponent<Compass>().GetDirection() == Compass.Direction.right)
@@ -98,7 +92,7 @@ public class AI_Shooting : MonoBehaviour
                 }
             }
             // check for targets in vertical path of fire below
-            else if (targetX < myX + 1.5 && targetZ < myZ)
+            else if (targetX < myX + 2 && targetZ < myZ)
             {
                 // check if tank is facing down
                 if (GetComponent<Compass>().GetDirection() == Compass.Direction.down)
@@ -107,7 +101,7 @@ public class AI_Shooting : MonoBehaviour
                 }
             }
             // check for targets in vertical path of fire above
-            else if (targetX < myX + 1.5 && targetZ > myZ)
+            else if (targetX < myX + 2 && targetZ > myZ)
             {
                 // check if tank is facing up
                 if (GetComponent<Compass>().GetDirection() == Compass.Direction.up)
@@ -125,7 +119,7 @@ public class AI_Shooting : MonoBehaviour
         else
         {
             // check for targets in horizontal path of fire
-            if (targetZ <= myZ + 1.5 && targetZ >= myZ - 1.5)
+            if (targetZ <= myZ + 2 && targetZ >= myZ - 2)
             {
                 // check if tank is facing left
                 if (GetComponent<Compass>().GetDirection() == Compass.Direction.left)
@@ -134,7 +128,7 @@ public class AI_Shooting : MonoBehaviour
                 }
             }
             // check for targets in vertical path of fire below
-            else if (targetX > myX - 1.5 && targetZ < myZ)
+            else if (targetX > myX - 2 && targetZ < myZ)
             {
                 // check if tank is facing down
                 if (GetComponent<Compass>().GetDirection() == Compass.Direction.down)
@@ -143,7 +137,7 @@ public class AI_Shooting : MonoBehaviour
                 }
             }
             // check for targets in vertical path of fire above
-            else if (targetX > myX - 1.5 && targetZ > myZ)
+            else if (targetX > myX - 2 && targetZ > myZ)
             {
                 // check if tank is facing up
                 if (GetComponent<Compass>().GetDirection() == Compass.Direction.up)

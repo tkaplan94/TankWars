@@ -28,7 +28,7 @@ public class Shoot : MonoBehaviour
 
                 projectile = Instantiate(bulletPrefab, location, tank.transform.rotation);
                 Physics.IgnoreCollision(projectile.GetComponent<Collider>(), GetComponent<Collider>());
-                projectile.velocity = transform.TransformDirection(Vector3.forward * 7);
+                projectile.velocity = transform.TransformDirection(Vector3.forward * 10);
 			}
         }
     }
